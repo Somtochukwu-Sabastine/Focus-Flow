@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Flow - Academic Coach</title>
+    <meta name="description"
+        content="Your personal academic coach to maximize productivity and intelligently manage your workload.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="glass-panel">
+            <h1>Focus Flow</h1>
+            <p>Your Academic Productivity Coach</p>
+        </header>
+
+        <main>
+            <section id="dashboard" class="glass-panel">
+                <h2>Overview & Intelligence</h2>
+                <div id="heatmap-container"></div>
+                <div id="ai-insights" class="ai-box hidden">
+                    <h3>💡 Academic Intelligence</h3>
+                    <p id="ai-message"></p>
+                </div>
+                <div id="overload-warning" class="hidden alert">
+                    ⚠️ Coach Warning: Your study plan is overloaded! Let me balance it for you.
+                    <button id="btn-restructure">Optimize My Plan</button>
+                </div>
+            </section>
+
+            <section id="task-entry" class="glass-panel focus-hidden">
+                <h2>Add Academic Goal</h2>
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="What do you need to study? (e.g., Chem Final)"
+                        required>
+                    <input type="number" id="task-effort" placeholder="Estimated Hours" required min="1">
+                    <input type="date" id="task-deadline" required>
+                    <button type="submit">Add to Plan</button>
+                </form>
+            </section>
+
+            <section id="focus-mode" class="glass-panel">
+                <h2>Focus & Timer</h2>
+                <div class="focus-controls">
+                    <select id="focus-task-select">
+                        <option value="">-- Select a task to focus on --</option>
+                    </select>
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    <div class="timer-buttons">
+                        <button id="btn-start-timer">Start Focus</button>
+                        <button id="btn-pause-timer" class="hidden">Pause</button>
+                        <button id="btn-stop-timer" class="danger-btn hidden">Stop</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="task-list" class="glass-panel focus-hidden">
+                <h2>Your Study Plan</h2>
+                <ul id="tasks-ul"></ul>
+            </section>
+        </main>
+
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
